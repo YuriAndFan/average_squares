@@ -60,8 +60,8 @@ if __name__ == "__main__":
     parser.add_argument("--weights", type=open)
 
     arguments = parser.parse_args()
-    numbers = [int(number) for number in arguments.number]
-    weights = [int(weight) for weight in arguments.weights]
+    numbers = [float(number) for number in arguments.number]
+    weights = [float(weight) for weight in arguments.weights]
 
     result = average_of_squares(numbers, weights)
 
