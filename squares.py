@@ -56,12 +56,12 @@ if __name__ == "__main__":
     numbers_strings = ["1", "2", "4"]
     weight_strings = ["1", "1", "1"]
     parser = ArgumentParser(description="Calculate the average of squares of numbers")
-    parser.add_argument("number", nargs="*")
-    parser.add_argument("--weights", nargs="*")
+    parser.add_argument("number", type=open)
+    parser.add_argument("--weights", type=open)
 
     arguments = parser.parse_args()
-    numbers = convert_numbers(arguments.number)
-    weights = convert_numbers(arguments.weights)
+    numbers = [int(number) for number in arguments.number]
+    weights = [int(weight) for weight in arguments.weights]
 
     result = average_of_squares(numbers, weights)
 
